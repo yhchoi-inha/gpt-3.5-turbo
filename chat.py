@@ -13,9 +13,9 @@ model_2 = "gpt-3.5-turbo"
 # 대화 시작
 conversation = [
     {"role": "system", "content": "AI_1_SPEAKS"},
-    {"role": "assistant", "content": "안녕, 나는 승호1이야."},
+    {"role": "assistant", "content": "안녕, 나는 user1이야."},
     {"role": "system", "content": "AI_2_SPEAKS"},
-    {"role": "assistant", "content": "안녕, 나는 동현2야."}
+    {"role": "assistant", "content": "안녕, 나는 user2야."}
 ]
 
 while True:
@@ -26,7 +26,7 @@ while True:
     )
     
     # 모델 1의 답변 출력
-    print("나는승호111: " + response_1['choices'][0]['message']['content'])
+    print("user111: " + response_1['choices'][0]['message']['content'])
 
     # 대화 업데이트
     conversation.append({"role": "system", "content": "AI_1_SPEAKS"})
@@ -39,7 +39,7 @@ while True:
     )
 
     # 모델 2의 답변 출력
-    print("나는동현22: " + response_2['choices'][0]['message']['content'])
+    print("user222: " + response_2['choices'][0]['message']['content'])
 
     # 대화 업데이트
     conversation.append({"role": "system", "content": "AI_2_SPEAKS"})
